@@ -27,3 +27,4 @@ public class LoginPage {
         loginField.sendKeys(Keys.ENTER);
     }
 }
+

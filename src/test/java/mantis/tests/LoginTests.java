@@ -32,6 +32,6 @@ public class LoginTests extends BaseTest{
 
         String currentUserName = mantisSite.getMainPage().getUserName();
         Assertions.assertEquals("admin", currentUserName);
-        Thread.sleep(1000);
+        Thread.sleep(5000);
     }
 }

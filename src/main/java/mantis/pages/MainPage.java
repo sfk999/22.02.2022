@@ -19,6 +19,7 @@ public class MainPage {
 
 
 
+
     public MainPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30, 500);
@@ -32,5 +33,6 @@ public class MainPage {
     public void goToViewIssuesPage() {
         viewIssuesPageButton.click();
     }
+
 
 }

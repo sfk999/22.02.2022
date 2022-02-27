@@ -39,7 +39,7 @@ public class MantisSite {
     }
 
     public ReportIssuePage getReportIssuePage() {return  reportIssuePage;}
-    // я добавил
+    // +
 
 
 

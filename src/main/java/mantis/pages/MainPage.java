@@ -16,6 +16,14 @@ public class MainPage {
     @FindBy(css = "a[href='/mantisbt/view_all_bug_page.php']")
     private WebElement viewIssuesPageButton;
 
+    @FindBy(css = "a[href='/mantisbt/bug_report_page.php']")
+    private WebElement reportIssuesPageButton;
+    //я +
+
+    public void goToReportIssuesPage() {reportIssuesPageButton.click();}
+    // я+
+
+
 
 
 

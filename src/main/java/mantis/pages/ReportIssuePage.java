@@ -11,9 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    @FindBy(css = "a[href='/mantisbt/bug_report_page.php']")
-    private WebElement reportIssuesPageButton;
-    //я +
+
 
     @FindBy(id = "summary")
     private WebElement summaryField;
@@ -25,8 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     private WebElement submitIssueButton;
 
 
-    public void goToReportIssuesPage() {reportIssuesPageButton.click();}
-//    я +
+
 
 
 

@@ -16,7 +16,7 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
         mantisSite.login("admin", "admin20");
 
         Thread.sleep(5000);
-        reportIssuePage.goToReportIssuesPage();
+        mainPage.goToReportIssuesPage();
         reportIssuePage.fillSummary("Test 25 005 2022");
 
     }

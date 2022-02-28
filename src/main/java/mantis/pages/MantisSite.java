@@ -27,8 +27,15 @@ public class MantisSite {
     }
 
     public void fillSummary (String summary) {
-        reportIssuePage.fillSummary("28080288");
+        reportIssuePage.fillSummary(summary);
     }
+    public void fillDescription (String description) {
+        reportIssuePage.fillDescription(description);
+    }
+    public void clickIssueButton() {
+        reportIssuePage.clickIssueButton();
+    }
+
 
 
     public LoginPage getLoginPage() {
@@ -45,6 +52,9 @@ public class MantisSite {
 
     public ReportIssuePage getReportIssuePage() {return  reportIssuePage;}
     // +
+
+
+
 
 
 

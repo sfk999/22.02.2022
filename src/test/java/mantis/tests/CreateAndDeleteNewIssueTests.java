@@ -5,6 +5,9 @@ import mantis.pages.MantisSite;
 import mantis.pages.ReportIssuePage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class CreateAndDeleteNewIssueTests extends BaseTest {
     private MantisSite mantisSite;
@@ -18,12 +21,18 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
         mantisSite.fillSummary("test1");
         mantisSite.fillDescription("test2");
         mantisSite.clickIssueButton();
-        Thread.sleep(5000);
-
+        Thread.sleep(3000);
 
         String currentTestCaseNumber = mantisSite.getReportIssuePage().checkTestCaseNumber();
         Assertions.assertEquals("test1", currentTestCaseNumber);
+
+        mantisSite.getReportIssuePage().clickInCheckbox();
+
+        WebElement button = driver.findElement(By.id("submit"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", button);
         Thread.sleep(5000);
+
+
 
     }
 

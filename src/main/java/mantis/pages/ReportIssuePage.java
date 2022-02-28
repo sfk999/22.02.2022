@@ -25,6 +25,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     @FindBy(css = "#buglist > tbody > tr:nth-child(1) > td.column-summary")
     private WebElement testCaseSummary;
 
+    @FindBy(css = "#buglist > tbody > tr:nth-child(1) > td.column-selection > div > label > span")
+    private WebElement checkbox;
+
+    @FindBy(name = "action")
+    private WebElement dropUpField;
+
+
 
     public ReportIssuePage(WebDriver driver) {
         this.driver = driver;
@@ -43,9 +50,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
         submitIssueButton.click();
     }
 
-        public String checkTestCaseNumber() {
-            return testCaseSummary.getText();
-        }
+    public String checkTestCaseNumber() {
+        return testCaseSummary.getText();
+    }
+
+    public void clickInCheckbox () {
+        checkbox.click();
+    }
+
 
 
 

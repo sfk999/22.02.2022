@@ -21,10 +21,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     @FindBy(css = "input[tabindex='18']")
     private WebElement submitIssueButton;
 
-    @FindBy(css = "#buglist > tbody > tr:nth-child(1) > td.column-summary")
+    @FindBy(css = "#buglist>tbody>tr:nth-child(1)>td.column-summary")
     private WebElement testCaseSummary;
 
-    @FindBy(css = "#buglist > tbody > tr:nth-child(1) > td.column-selection > div > label > span")
+    @FindBy(css = "#buglist>tbody>tr:nth-child(1) span[class='lbl']")
     private WebElement checkbox;
 
     @FindBy(name = "action")

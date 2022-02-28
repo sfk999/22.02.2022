@@ -27,10 +27,13 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
         Assertions.assertEquals("test1", currentTestCaseNumber);
 
         mantisSite.getReportIssuePage().clickInCheckbox();
+        ((JavascriptExecutor) driver).executeScript
+                ("arguments[0].scrollIntoView(true);", mantisSite.getDropUpField());
+        mantisSite.selectDeleteValue();
+        mantisSite.clickOkButton();
+        mantisSite.clickDeleteIssueButton();
+        Thread.sleep(3000);
 
-        WebElement button = driver.findElement(By.id("submit"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", button);
-        Thread.sleep(5000);
 
 
 

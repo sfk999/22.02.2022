@@ -1,6 +1,7 @@
 package mantis.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class MantisSite {
     private final WebDriver driver;
@@ -8,8 +9,6 @@ public class MantisSite {
     private PasswordPage passwordPage;
     private MainPage mainPage;
     private  ReportIssuePage reportIssuePage;
-//     я добавил
-
 
     public MantisSite(WebDriver driver) {
         this.driver = driver;
@@ -18,7 +17,7 @@ public class MantisSite {
         passwordPage = new PasswordPage(driver);
         mainPage = new MainPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
-        // я добавил
+
     }
 
     public void login(String login, String password) {
@@ -52,6 +51,18 @@ public class MantisSite {
 
     public ReportIssuePage getReportIssuePage() {return  reportIssuePage;}
     // +
+    public WebElement getDropUpField () {
+        return reportIssuePage.getDropUpField();
+    }
+    public void selectDeleteValue() {
+        reportIssuePage.selectDeleteValue();
+    }
+    public void clickOkButton () {
+        reportIssuePage.clickOkButton();
+    }
+    public void clickDeleteIssueButton () {
+        reportIssuePage.clickDeleteIssueButton();
+    }
 
 
 

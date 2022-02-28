@@ -20,8 +20,7 @@ public class MainPage {
     private WebElement reportIssuesPageButton;
     //+
 
-    public void goToReportIssuesPage() {reportIssuesPageButton.click();}
-    // +
+
 
 
     public MainPage(WebDriver driver) {
@@ -37,6 +36,9 @@ public class MainPage {
     public void goToViewIssuesPage() {
         viewIssuesPageButton.click();
     }
+
+    public void goToReportIssuesPage() {reportIssuesPageButton.click();}
+    // +
 
 
 }

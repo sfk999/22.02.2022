@@ -26,6 +26,11 @@ public class MantisSite {
         passwordPage.login(password);
     }
 
+    public void fillSummary (String summary) {
+        reportIssuePage.fillSummary("28080288");
+    }
+
+
     public LoginPage getLoginPage() {
         return loginPage;
     }
@@ -40,6 +45,8 @@ public class MantisSite {
 
     public ReportIssuePage getReportIssuePage() {return  reportIssuePage;}
     // +
+
+
 
 
 

@@ -23,25 +23,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     private WebElement submitIssueButton;
 
 
-
-
-
-
-
-    public void fillSummary (String summary) {
-
-        summaryField.sendKeys(summary);
-    }
-
-
-
     public ReportIssuePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30, 500);
         PageFactory.initElements(driver, this);
     }
 
-
+    public void fillSummary (String summary) {
+        summaryField.sendKeys(summary);
+    }
 
 
 

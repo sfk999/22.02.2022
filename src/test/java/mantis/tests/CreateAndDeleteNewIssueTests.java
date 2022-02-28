@@ -7,24 +7,17 @@ import org.junit.jupiter.api.Test;
 
 public class CreateAndDeleteNewIssueTests extends BaseTest {
     private MantisSite mantisSite;
-    private MainPage mainPage;
-    private ReportIssuePage reportIssuePage;
 
     @Test
     public void createAndDeleteNewIssueTests() throws InterruptedException {
         mantisSite = new MantisSite(driver);
         mantisSite.login("admin", "admin20");
 
+        mantisSite.getMainPage().goToReportIssuesPage();
+        mantisSite.fillSummary("");
+//        reportIssuePage.fillSummary("Test 25 005 2022");
         Thread.sleep(5000);
-        mainPage.goToReportIssuesPage();
-        reportIssuePage.fillSummary("Test 25 005 2022");
-
     }
-
-
-
-
-
 
 
 

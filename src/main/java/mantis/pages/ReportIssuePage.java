@@ -1,6 +1,5 @@
 package mantis.pages;
 // мой
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +35,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     @FindBy(css = "[value='Delete Issues']")
     private WebElement deleteIssuesButton;
 
+    @FindBy (css = "#report_bug_form > div > div.widget-header.widget-header-small > h4")
+    private WebElement enterIssueDetailsBlock;
+
+    @FindBy (css = "#action-group-div > form > div > div.widget-header.widget-header-small > h4")
+    private WebElement areYouSureBlock;
+
     public ReportIssuePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30, 500);
@@ -51,7 +56,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     public void clickIssueButton () {
         submitIssueButton.click();
     }
-    public String checkTestCaseNumber() {return testCaseSummary.getText();}
+    public String checkTestCaseSummary() {return testCaseSummary.getText();}
     public void clickInCheckbox () {checkbox.click();}
     public WebElement getDropUpField () { return dropUpField; }
     public void selectDeleteValue() {
@@ -60,6 +65,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     }
     public void clickOkButton() {okButton.click();}
     public void clickDeleteIssueButton() {deleteIssuesButton.click();}
+    public boolean isEnterIssueDetailsBlockIsDisplayed() {
+        return enterIssueDetailsBlock.isDisplayed();
+    }
+    public boolean isAreYouSureBlockIsDisplayed() {
+        return areYouSureBlock.isDisplayed();
+    }
+
     }
 
 

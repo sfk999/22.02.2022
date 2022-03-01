@@ -34,17 +34,12 @@ public class MantisSite {
     public void clickIssueButton() {
         reportIssuePage.clickIssueButton();
     }
-
-
-
     public LoginPage getLoginPage() {
         return loginPage;
     }
-
     public PasswordPage getPasswordPage() {
         return passwordPage;
     }
-
     public MainPage getMainPage() {
         return mainPage;
     }
@@ -63,12 +58,10 @@ public class MantisSite {
     public void clickDeleteIssueButton () {
         reportIssuePage.clickDeleteIssueButton();
     }
-
-
-
-
-
-
-
-
+    public boolean isEnterIssueDetailsBlockIsDisplayed() {
+        return reportIssuePage.isEnterIssueDetailsBlockIsDisplayed();
+    }
+    public boolean isAreYouSureBlockIsDisplayed() {
+        return reportIssuePage.isAreYouSureBlockIsDisplayed();
+    }
 }

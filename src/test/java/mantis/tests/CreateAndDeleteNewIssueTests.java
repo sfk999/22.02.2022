@@ -15,7 +15,7 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
 
         mantisSite.getMainPage().goToReportIssuesPage();
         SoftAssertions softAssert = new SoftAssertions();
-        softAssert.assertThat(mantisSite.isEnterIssueDetailsBlockIsDisplayed());
+        softAssert.assertThat(mantisSite.isEnterIssueDetailsBlockIsDisplayed()).isEqualTo(true);
         mantisSite.fillSummary("test1");
         mantisSite.fillDescription("test2");
         mantisSite.clickIssueButton();
@@ -29,7 +29,7 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
                 ("arguments[0].scrollIntoView(true);", mantisSite.getDropUpField());
         mantisSite.selectDeleteValue();
         mantisSite.clickOkButton();
-        softAssert.assertThat(mantisSite.isAreYouSureBlockIsDisplayed());
+        softAssert.assertThat(mantisSite.isAreYouSureBlockIsDisplayed()).isEqualTo(true);
         mantisSite.clickDeleteIssueButton();
         Thread.sleep(3000);
         softAssert.assertAll();

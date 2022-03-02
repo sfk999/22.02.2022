@@ -8,7 +8,7 @@ public class MantisSite {
     private LoginPage loginPage;
     private PasswordPage passwordPage;
     private MainPage mainPage;
-    private  ReportIssuePage reportIssuePage;
+    private ReportIssuePage reportIssuePage;
 
     public MantisSite(WebDriver driver) {
         this.driver = driver;
@@ -25,43 +25,19 @@ public class MantisSite {
         passwordPage.login(password);
     }
 
-    public void fillSummary (String summary) {
-        reportIssuePage.fillSummary(summary);
-    }
-    public void fillDescription (String description) {
-        reportIssuePage.fillDescription(description);
-    }
-    public void clickIssueButton() {
-        reportIssuePage.clickIssueButton();
-    }
     public LoginPage getLoginPage() {
         return loginPage;
     }
+
     public PasswordPage getPasswordPage() {
         return passwordPage;
     }
+
     public MainPage getMainPage() {
         return mainPage;
     }
 
-    public ReportIssuePage getReportIssuePage() {return  reportIssuePage;}
-    // +
-    public WebElement getDropUpField () {
-        return reportIssuePage.getDropUpField();
-    }
-    public void selectDeleteValue() {
-        reportIssuePage.selectDeleteValue();
-    }
-    public void clickOkButton () {
-        reportIssuePage.clickOkButton();
-    }
-    public void clickDeleteIssueButton () {
-        reportIssuePage.clickDeleteIssueButton();
-    }
-    public boolean isEnterIssueDetailsBlockIsDisplayed() {
-        return reportIssuePage.isEnterIssueDetailsBlockIsDisplayed();
-    }
-    public boolean isAreYouSureBlockIsDisplayed() {
-        return reportIssuePage.isAreYouSureBlockIsDisplayed();
+    public ReportIssuePage getReportIssuePage() {
+        return reportIssuePage;
     }
 }

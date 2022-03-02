@@ -1,5 +1,6 @@
 package mantis.pages;
 // мой
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-    public class ReportIssuePage {
+public class ReportIssuePage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
@@ -35,10 +36,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
     @FindBy(css = "[value='Delete Issues']")
     private WebElement deleteIssuesButton;
 
-    @FindBy (css = "#report_bug_form > div > div.widget-header.widget-header-small > h4")
+    @FindBy(css = "#report_bug_form > div > div.widget-header.widget-header-small > h4")
     private WebElement enterIssueDetailsBlock;
 
-    @FindBy (css = "#action-group-div > form > div > div.widget-header.widget-header-small > h4")
+    @FindBy(css = "#action-group-div > form > div > div.widget-header.widget-header-small > h4")
     private WebElement areYouSureBlock;
 
     public ReportIssuePage(WebDriver driver) {
@@ -47,32 +48,45 @@ import org.openqa.selenium.support.ui.WebDriverWait;
         PageFactory.initElements(driver, this);
     }
 
-    public void fillSummary (String summary) {
+    public void createIssue(String summary, String description) {
         summaryField.sendKeys(summary);
-    }
-    public void fillDescription (String description) {
         descriptionField.sendKeys(description);
-    }
-    public void clickIssueButton () {
         submitIssueButton.click();
     }
-    public String checkTestCaseSummary() {return testCaseSummary.getText();}
-    public void clickInCheckbox () {checkbox.click();}
-    public WebElement getDropUpField () { return dropUpField; }
+
+    public String checkTestCaseSummary() {
+        return testCaseSummary.getText();
+    }
+
+    public void clickInCheckbox() {
+        checkbox.click();
+    }
+
+    public WebElement getDropUpField() {
+        return dropUpField;
+    }
+
     public void selectDeleteValue() {
         Select selectDropUpField = new Select(dropUpField);
         selectDropUpField.selectByIndex(4);
     }
-    public void clickOkButton() {okButton.click();}
-    public void clickDeleteIssueButton() {deleteIssuesButton.click();}
+
+    public void clickOkButton() {
+        okButton.click();
+    }
+
+    public void clickDeleteIssueButton() {
+        deleteIssuesButton.click();
+    }
+
     public boolean isEnterIssueDetailsBlockIsDisplayed() {
         return enterIssueDetailsBlock.isDisplayed();
     }
+
     public boolean isAreYouSureBlockIsDisplayed() {
         return areYouSureBlock.isDisplayed();
     }
-
-    }
+}
 
 
 

@@ -18,10 +18,6 @@ public class MainPage {
 
     @FindBy(css = "a[href='/mantisbt/bug_report_page.php']")
     private WebElement reportIssuesPageButton;
-    //+
-
-
-
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -37,8 +33,8 @@ public class MainPage {
         viewIssuesPageButton.click();
     }
 
-    public void goToReportIssuesPage() {reportIssuesPageButton.click();}
-    // +
-
+    public void goToReportIssuesPage() {
+        reportIssuesPageButton.click();
+    }
 
 }

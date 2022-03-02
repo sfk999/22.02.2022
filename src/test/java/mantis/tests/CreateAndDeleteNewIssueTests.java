@@ -1,5 +1,6 @@
 package mantis.tests;
 //мой тест
+
 import mantis.pages.MantisSite;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
@@ -15,23 +16,21 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
 
         mantisSite.getMainPage().goToReportIssuesPage();
         SoftAssertions softAssert = new SoftAssertions();
-        softAssert.assertThat(mantisSite.isEnterIssueDetailsBlockIsDisplayed()).isEqualTo(true);
-        mantisSite.fillSummary("test1");
-        mantisSite.fillDescription("test2");
-        mantisSite.clickIssueButton();
+        softAssert.assertThat(mantisSite.getReportIssuePage().isEnterIssueDetailsBlockIsDisplayed()).isEqualTo(true);
+
+        mantisSite.getReportIssuePage().createIssue("test1", "test2");
         Thread.sleep(3000);
 
         String currentTestCaseSummary = mantisSite.getReportIssuePage().checkTestCaseSummary();
         softAssert.assertThat("123").isEqualTo(currentTestCaseSummary);
 
         mantisSite.getReportIssuePage().clickInCheckbox();
-        ((JavascriptExecutor) driver).executeScript
-                ("arguments[0].scrollIntoView(true);", mantisSite.getDropUpField());
-        mantisSite.selectDeleteValue();
-        mantisSite.clickOkButton();
-        softAssert.assertThat(mantisSite.isAreYouSureBlockIsDisplayed()).isEqualTo(true);
-        mantisSite.clickDeleteIssueButton();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mantisSite.getReportIssuePage().getDropUpField());
+        mantisSite.getReportIssuePage().selectDeleteValue();
+        mantisSite.getReportIssuePage().clickOkButton();
+        softAssert.assertThat(mantisSite.getReportIssuePage().isAreYouSureBlockIsDisplayed()).isEqualTo(true);
+        mantisSite.getReportIssuePage().clickDeleteIssueButton();
         Thread.sleep(3000);
         softAssert.assertAll();
     }
-    }
+}

@@ -22,7 +22,7 @@ public class CreateAndDeleteNewIssueTests extends BaseTest {
         Thread.sleep(3000);
 
         String currentTestCaseSummary = mantisSite.getReportIssuePage().checkTestCaseSummary();
-        softAssert.assertThat("123").isEqualTo(currentTestCaseSummary);
+        softAssert.assertThat("test1").isEqualTo(currentTestCaseSummary);
 
         mantisSite.getReportIssuePage().clickInCheckbox();
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mantisSite.getReportIssuePage().getDropUpField());
